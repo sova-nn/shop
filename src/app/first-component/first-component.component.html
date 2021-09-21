@@ -1,0 +1,11 @@
+<div class="first-component" *ngIf="product?.isAvailable">
+  <div class="first-component_main">
+    <p>FirstComponent</p>
+    <div><span>Имя: </span><span>{{product?.name}}</span></div>
+    <div><span>Описание: </span><span>{{product?.description}}</span></div>
+    <div><span>Цена: </span><span>{{product?.price}}</span></div>
+    <div><span>Категория: </span><span>{{product?.category}}</span></div>
+  </div>
+  <app-product-component></app-product-component>
+</div>
+

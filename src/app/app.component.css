@@ -1,0 +1,7 @@
+.app-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex: 1 1 auto;
+  margin: 50px 20px;
+}
