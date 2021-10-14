@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
-import { Category, ProductModel } from "../models/product.models";
+import { Category, ProductModel } from "../../models/product.models";
+import {Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
 
 export const DEFAULT_PRODUCT_LIST: ProductModel[] = [
   {
@@ -8,7 +10,7 @@ export const DEFAULT_PRODUCT_LIST: ProductModel[] = [
     price: 1330,
     category: Category.Fifth_Category,
     isAvailable: true,
-    index: 0,
+    _id: 0,
   },
   {
     name: 'Книга 2',
@@ -16,7 +18,7 @@ export const DEFAULT_PRODUCT_LIST: ProductModel[] = [
     price: 550,
     category: Category.Fourth_Category,
     isAvailable: true,
-    index: 1,
+    _id: 1,
   },
   {
     name: 'Книга 3',
@@ -24,7 +26,7 @@ export const DEFAULT_PRODUCT_LIST: ProductModel[] = [
     price: 70000,
     category: Category.Third_Category,
     isAvailable: true,
-    index: 2,
+    _id: 2,
   },
   {
     name: 'Книга 4',
@@ -32,7 +34,7 @@ export const DEFAULT_PRODUCT_LIST: ProductModel[] = [
     price: 450,
     category: Category.Second_Category,
     isAvailable: true,
-    index: 3,
+    _id: 3,
   },
   {
     name: 'Книга 5',
@@ -40,7 +42,7 @@ export const DEFAULT_PRODUCT_LIST: ProductModel[] = [
     price: 250,
     category: Category.Fifth_Category,
     isAvailable: false,
-    index: 4,
+    _id: 4,
   }
 ]
 
@@ -48,7 +50,15 @@ export const DEFAULT_PRODUCT_LIST: ProductModel[] = [
   providedIn: 'root',
 })
 export class ProductService {
-  getProducts(): ProductModel[] {
-    return DEFAULT_PRODUCT_LIST;
+
+  constructor(private http: HttpClient) {
+  }
+
+  getProducts(): Observable<any> {
+    return this.http.get('http://127.0.0.1:3000/api/products')
+  }
+
+  addProductToCart(product: ProductModel): void {
+
   }
 }

@@ -1,0 +1,11 @@
+<div class="cart-item" highlightDirective>
+  <div>Товар: {{productItem.product.name}}</div>
+  <div class="cart-item-quantity">
+    <button (click)="minusBtnClick()">-</button>
+    <span class="cart-item-num">{{productItem.quantity}}</span>
+    <button (click)="plusBtnClick()">+</button>
+  </div>
+  <div>
+    <button (click)="deleteBtnClick()">удалить</button>
+  </div>
+</div>

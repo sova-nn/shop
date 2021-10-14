@@ -1,0 +1,17 @@
+.cart-item {
+  display: flex;
+}
+
+.cart-item-quantity {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.cart-item-num {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.btn-plus {
+
+}

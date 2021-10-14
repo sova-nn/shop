@@ -12,5 +12,5 @@ export interface ProductModel {
   price: number,
   category: Category,
   isAvailable: boolean,
-  index: number,
+  _id: number,
 }
