@@ -7,3 +7,4 @@
 6. Использованы DOM-события в коде.
 7. Использованы декораторы @Input(), @Output().
 8. Модифицирован CartListComponent - добавлено отображение количества купленных товаров и общая сумма.
+9. Добавлено Task-2 demo в wiki https://github.com/sova-nn/shop/wiki/Task-2
