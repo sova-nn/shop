@@ -9,12 +9,13 @@ import {CartService} from "../../../cart/services/cart.service";
 })
 export class ProductComponent implements OnInit {
   @Input() products!: ProductModel[];
-  @Output() addToCartClick = new EventEmitter();
+  @Output() addToCartClick = new EventEmitter<ProductModel>();
   constructor(
     public cartService: CartService,
   ) { }
 
   ngOnInit(): void {
+    ;
   }
 
   onAddToCart(product: ProductModel): void {

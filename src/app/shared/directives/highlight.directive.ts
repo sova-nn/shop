@@ -1,6 +1,7 @@
 import {Directive, HostBinding, HostListener} from "@angular/core";
 
 @Directive({
+  // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[highlightDirective]'
 })
 export class HighlightDirective {

@@ -55,6 +55,7 @@ export class ProductService {
   }
 
   getProducts(): Observable<any> {
+    // У меня не установлен MongoDB, поэтому мне надо как-то по другому получить данные
     return this.http.get('http://127.0.0.1:3000/api/products')
   }
 
