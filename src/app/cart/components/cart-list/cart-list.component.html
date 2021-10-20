@@ -1,26 +1,27 @@
-<div *ngIf="products?.length; else toProducts"
-     class="products">
-  <p class="products-header">Ваши купленные товары</p>
-  <div class="products-list">
-    <ul *ngFor="let item of products">
-      <li>
-        <app-cart-item
-          [productItem]="item"
-          (minusBtnClicked)="decreaseProductNumber(item.product._id)"
-          (plusBtnClicked)="increaseProductNumber(item.product._id)"
-          (deleteBtnClicked)="deleteProduct(item.product._id)"
-        ></app-cart-item>
-      </li>
-    </ul>
-  </div>
-  <div class="total">
-    <p>Количество товаров:
-      <span class="total-quantity">{{totalQuantity}}</span>
-      Сумма покупки:
-      <span class="total-quantity">{{totalSum}}</span>
-    </p>
-  </div>
-</div>
 <ng-template #toProducts>
-  <div class="no-products">У вас пока нет купленных товаров</div>
+  <div class="products">
+    <p class="products-header">Ваши купленные товары</p>
+    <div class="products-list">
+      <ul *ngFor="let item of products">
+        <li>
+          <app-cart-item
+            [productItem]="item"
+            (minusBtnClicked)="decreaseProductNumber(item.product._id)"
+            (plusBtnClicked)="increaseProductNumber(item.product._id)"
+            (deleteBtnClicked)="deleteProduct(item.product._id)"
+          ></app-cart-item>
+        </li>
+      </ul>
+    </div>
+    <div class="total">
+      <p>Количество товаров:
+        <span class="total-quantity">{{totalQuantity}}</span>
+        Сумма покупки:
+        <span class="total-quantity">{{totalSum}}</span>
+      </p>
+    </div>
+  </div>
 </ng-template>
+<div *ngIf="cartService.isEmptyCart$ | async; else toProducts">
+  <div class="no-products">У вас пока нет купленных товаров</div>
+</div>

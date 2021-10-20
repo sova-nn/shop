@@ -8,3 +8,9 @@
 7. Использованы декораторы @Input(), @Output().
 8. Модифицирован CartListComponent - добавлено отображение количества купленных товаров и общая сумма.
 9. Добавлено Task-2 demo в wiki https://github.com/sova-nn/shop/wiki/Task-2
+
+**Task 3**
+1. CartService модифицирован, в него перенесены методы getProducts, addProduct, removeProduct, increaseQuantity/decreaseQuantity, changeQuantity, removeAllProducts, updateCartData. Сервис хранит в себе поля isEmptyCart, cartProducts, totalQuantity, totalSumю
+2. Созданы сервисы ConfigOptionsService, ConstantsService, GeneratorService, LocalStorageService.
+3. Восстановлен компонент FirstComponent (был ранее переименован в ProductComponent), в него внедрены сервисы из п.2. Использован декоратор @Optional
+4. Создана директива CatDirective, которая меняет текст товара на котика. Использованы ElementRef и Renderer2.

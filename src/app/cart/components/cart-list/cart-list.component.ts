@@ -18,45 +18,27 @@ export class CartListComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.cartProducts$.subscribe((data) => {
       this.products = data;
-      this.totalSum = this.cartService.getTotalSum(data);
-      this.totalQuantity = this.getTotalQuantity(data);
       }
     )
+
+    this.cartService.totalSum$.subscribe((sum) => {
+      this.totalSum = sum;
+    })
+
+    this.cartService.totalQuantity$.subscribe((quantity) => {
+      this.totalQuantity = quantity;
+    })
   }
 
-  getTotalQuantity(data: IProductsCart[]) {
-    return data.reduce(function (accumulator, item) {
-      return accumulator + item.quantity;
-    }, 0);
-  }
-
-  deleteProduct(id: any) {
-    this.products = this.products.filter((item) => item.product._id as number !== id );
-    this.totalSum = this.cartService.getTotalSum(this.products);
-    this.totalQuantity = this.getTotalQuantity(this.products);
+  deleteProduct(id: number) {
+    return this.cartService.removeProduct(id);
   }
 
   decreaseProductNumber(id: any) {
-    if (this.products[id].quantity === 1) {
-      this.deleteProduct(id);
-    } else {
-      this.products.map((productItem) => {
-        if (productItem.product._id === id) {
-          productItem.quantity --;
-        }
-      });
-      this.totalSum = this.cartService.getTotalSum(this.products);
-      this.totalQuantity = this.getTotalQuantity(this.products);
-    }
+    return this.cartService.decreaseQuantity(id);
   }
 
-  increaseProductNumber(id: any) {
-    this.products.map((productItem) => {
-      if (productItem.product._id === id) {
-        productItem.quantity ++;
-      }
-    });
-    this.totalSum = this.cartService.getTotalSum(this.products);
-    this.totalQuantity = this.getTotalQuantity(this.products);
+  increaseProductNumber(id: number) {
+    return this.cartService.increaseQuantity(id);
   }
 }

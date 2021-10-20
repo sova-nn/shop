@@ -9,6 +9,7 @@ import { CartListComponent } from './cart/components/cart-list/cart-list.compone
 import {CartItemComponent} from "./cart/components/cart-item/cart-item.component";
 import { HeaderModule} from "./header/header.module";
 import {SharedModule} from "./shared/shared.module";
+import {FirstComponent} from "./first/first.component";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {SharedModule} from "./shared/shared.module";
     ProductListComponent,
     CartListComponent,
     CartItemComponent,
+    FirstComponent,
   ],
   imports: [
     BrowserModule,
