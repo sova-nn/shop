@@ -1,5 +1,6 @@
 .cart-item {
   display: flex;
+  padding-left: 5px;
 }
 
 .cart-item-quantity {

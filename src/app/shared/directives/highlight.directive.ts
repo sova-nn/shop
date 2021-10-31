@@ -1,20 +1,21 @@
 import {Directive, HostBinding, HostListener} from "@angular/core";
 
 @Directive({
+  // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[highlightDirective]'
 })
 export class HighlightDirective {
-  private backgroundColor: string = 'transparent'
+  private fontWeight: string = 'normal'
 
-  @HostBinding('style.backgroundColor') get background() {
-    return this.backgroundColor;
+  @HostBinding('style.fontWeight') get fontWeightStyle() {
+    return this.fontWeight;
   }
 
   @HostListener('mouseenter') onMouseEnter(){
-    return this.backgroundColor = "rgba(72, 209, 204, 255)";
+    return this.fontWeight = "bold";
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    return this.backgroundColor = 'transparent';
+    return this.fontWeight = 'normal';
   }
 }

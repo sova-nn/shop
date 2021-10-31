@@ -9,7 +9,7 @@ import {CartService} from "../../../cart/services/cart.service";
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-  products: ProductModel[] = [];
+  products$ = this.productService.getProducts();
 
   constructor(
     public productService: ProductService,
@@ -17,9 +17,9 @@ export class ProductListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe((data) => {
-      this.products = data;
-    })
+    // this.productService.getProducts().subscribe((data) => {
+    //   this.products = data;
+    // })
   }
 
   addToCart(product: ProductModel): void {

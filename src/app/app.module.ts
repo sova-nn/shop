@@ -10,6 +10,7 @@ import {CartItemComponent} from "./cart/components/cart-item/cart-item.component
 import { HeaderModule} from "./header/header.module";
 import {SharedModule} from "./shared/shared.module";
 import {FirstComponent} from "./first/first.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,12 +21,13 @@ import {FirstComponent} from "./first/first.component";
     CartItemComponent,
     FirstComponent,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    HeaderModule,
-    SharedModule,
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        HeaderModule,
+        SharedModule,
+        FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

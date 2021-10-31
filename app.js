@@ -10,6 +10,8 @@ const mongoClient = new MongoClient("mongodb://localhost:27017/");
 let dbClient;
 
 const cors=require("cors");
+
+const productsData = require("./src/app/mocks/productsData");
 const corsOptions ={
   origin:'*',
   credentials:true,            //access-control-allow-credentials:true
@@ -31,8 +33,11 @@ mongoClient.connect(function(err, client){
 app.get("/api/products", function(req, res){
   const collection = req.app.locals.collection;
   collection.find({}).toArray(function(err, products){
-    if(err) return console.log(err);
-    res.send(products)
+    if(err) {
+      console.log(err);
+      return productsData;
+    }
+    res.send(products) // заменить на res.send(productsData)
   });
 });
 

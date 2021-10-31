@@ -8,7 +8,7 @@
 }
 
 .products {
-  width: 330px;
+  width: 400px;
   background-color: mediumturquoise;
   margin-top: 20px;
   border-radius: 10px;
@@ -19,15 +19,16 @@
 }
 
 .products-header {
-  width: 200px;
+  width: 250px;
   background-color: PaleTurquoise;
   border-radius: 5px;
   text-align: center;
   padding: 5px;
+  margin-bottom: 10px;
 }
 
 .products-list {
-  width: 300px;
+  width: 350px;
   background-color: #f5e9da;
   border-radius: 5px
 }
@@ -41,4 +42,8 @@
 
 .total-quantity {
   font-weight: bold;
+}
+
+.products-order__label {
+  margin-bottom: 10px;
 }

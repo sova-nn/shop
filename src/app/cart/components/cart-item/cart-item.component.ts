@@ -8,9 +8,9 @@ import {IProductsCart} from "../../services/cart.service";
 })
 export class CartItemComponent {
   @Input() productItem: IProductsCart;
-  @Output() minusBtnClicked = new EventEmitter();
-  @Output() plusBtnClicked = new EventEmitter();
-  @Output() deleteBtnClicked = new EventEmitter();
+  @Output() minusBtnClicked = new EventEmitter<void>();
+  @Output() plusBtnClicked = new EventEmitter<void>();
+  @Output() deleteBtnClicked = new EventEmitter<void>();
   constructor() {}
 
   minusBtnClick(): void {

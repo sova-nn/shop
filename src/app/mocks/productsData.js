@@ -1,14 +1,9 @@
-import { Injectable } from "@angular/core";
-import { Category, ProductModel } from "../../models/product.models";
-import {Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
-
-export const DEFAULT_PRODUCT_LIST: ProductModel[] = [
+module.exports = [
   {
     name: 'Книга 11',
     description: 'Невероятная книга о качках в качалке',
     price: 1330,
-    category: Category.Fifth_Category,
+    category: 1,
     isAvailable: true,
     _id: 0,
   },
@@ -16,7 +11,7 @@ export const DEFAULT_PRODUCT_LIST: ProductModel[] = [
     name: 'Книга 22',
     description: 'Книга о вкусной и здоровой пище',
     price: 550,
-    category: Category.Fourth_Category,
+    category: 2,
     isAvailable: true,
     _id: 1,
   },
@@ -24,7 +19,7 @@ export const DEFAULT_PRODUCT_LIST: ProductModel[] = [
     name: 'Книга 33',
     description: 'Странный триллер с хорошим финалом',
     price: 70000,
-    category: Category.Third_Category,
+    category: 2,
     isAvailable: true,
     _id: 2,
   },
@@ -32,7 +27,7 @@ export const DEFAULT_PRODUCT_LIST: ProductModel[] = [
     name: 'Книга 44',
     description: 'Лучшая книга для людей без чувства юмора',
     price: 450,
-    category: Category.Second_Category,
+    category: 1,
     isAvailable: true,
     _id: 3,
   },
@@ -40,25 +35,8 @@ export const DEFAULT_PRODUCT_LIST: ProductModel[] = [
     name: 'Книга 55',
     description: 'Для позитивно настроенных ленивцев',
     price: 250,
-    category: Category.Fifth_Category,
+    category: 1,
     isAvailable: false,
     _id: 4,
   }
 ]
-
-@Injectable({
-  providedIn: 'root',
-})
-export class ProductService {
-
-  constructor(private http: HttpClient) {
-  }
-
-  getProducts(): Observable<any> {
-    return this.http.get('http://127.0.0.1:3000/api/products')
-  }
-
-  addProductToCart(product: ProductModel): void {
-
-  }
-}

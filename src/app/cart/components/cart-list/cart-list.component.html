@@ -1,6 +1,17 @@
 <ng-template #toProducts>
   <div class="products">
-    <p class="products-header">Ваши купленные товары</p>
+    <p class="products-header">{{'Ваши товары' | uppercase}}</p>
+    <div class="products-order__label">
+      Сортировка по
+      <span>
+        <select [(ngModel)]="selected" (ngModelChange)="selectChange()">
+          <option *ngFor="let item of order" [ngValue]="item.value">{{item.label}}</option>
+        </select>
+      </span>
+
+      <div>Сортировать в обратном порядке<input type="checkbox" (change)="onToggle()"></div>
+
+    </div>
     <div class="products-list">
       <ul *ngFor="let item of products">
         <li>
@@ -17,7 +28,7 @@
       <p>Количество товаров:
         <span class="total-quantity">{{totalQuantity}}</span>
         Сумма покупки:
-        <span class="total-quantity">{{totalSum}}</span>
+        <span class="total-quantity">{{totalSum | currency }}</span>
       </p>
     </div>
   </div>

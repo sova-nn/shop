@@ -11,7 +11,7 @@ export class HeaderComponent implements AfterViewInit {
   constructor() { }
 
   @ViewChild('appTitle')
-  titleElement!: ElementRef<HTMLElement>;
+  titleElement!: ElementRef<HTMLHeadingElement>;
 
   ngAfterViewInit(): void {
     this.titleElement.nativeElement.textContent = this.title;

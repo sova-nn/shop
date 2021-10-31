@@ -1,6 +1,6 @@
 <div>
   <app-product
-    [products]="products"
+    [products]="products$ | async"
     (addToCartClick)="addToCart($event)"
   ></app-product>
 </div>
