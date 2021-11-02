@@ -14,7 +14,7 @@ export class ConfigOptionsService {
   private configuration: ConfigModel;
 
   setConfig(config: Partial<ConfigModel>): void {
-    this.configuration = {...this.configuration, ...config}
+    this.configuration = {...this.configuration, ...config};
   }
 
   getConfig(): ConfigModel {
