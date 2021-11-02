@@ -1,6 +1,7 @@
 import {Directive, ElementRef, HostListener, Input, Renderer2} from "@angular/core";
 
 @Directive({
+  // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[catDirective]'
 })
 export class CatDirective {
